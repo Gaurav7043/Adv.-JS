@@ -9,7 +9,7 @@ console.log("🚀 ~ file: 21_Optional chaining.js:7 ~ x:", x)
 let y = user?.address?.city?.pincode
 console.log("🚀 ~ file: 21_Optional chaining.js:10 ~ y:", y)
 
-user?.print?.()
+user?.print?.() // give error - we can't use (?) at left end side
 user.address={city:"surat"}
 
 let data = "null";
