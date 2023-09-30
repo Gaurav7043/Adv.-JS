@@ -1,0 +1,9 @@
+[{
+  "name" : "Gaurav",
+  "age" : 22,
+  "arr" : [1, 2, 3, 4, 5, "test"],
+  "obj" : {
+    "a" : 30,
+    "str" : "test"
+  }
+}]
