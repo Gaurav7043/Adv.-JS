@@ -1,27 +1,20 @@
-const data = require("./data.json")
-// console.log(data)
+let data = require("./23_data.json")
+// console.log("data:", data)
 
-// want all object where state_name key value is Karnātaka
-function state(){
-    let filterdata = data.filter((e)=>{
-        return e.state_name === "Gujarāt";
+function get_city_by_state_name(state){
+    let filter = data.filter((e)=>{
+        // console.log("--->", e.state_name);
+        return e?.state_name === state
+    });
+    // console.log("filter:", filter)
+    let cityarr = filter.map((e)=>{
+        // console.log(e);
+        return e.city;
     })
-    console.log("filterdata:", filterdata)
+    // console.log("cityarr:", cityarr)
+    return cityarr;
 }
-state("Gujarāt")
-
-// const data = require("./data.json");
-// console.log("data", typeof data);
-// function getCityByStateName(state) {
-//     let filteredData = data.filter((e) => {
-//     // console.log("--->", e);
-//     return e.state_name === state;
-//   });
-// //   console.log("filteredData", filteredData);
-//     let cityArr = filteredData.map((e) => e.city);
-//     return cityArr;
-// }
-// let x = getCityByStateName("Delhi");
-// let y = getCityByStateName("Karnātaka");
-// console.log("x---->", x);
-// console.log("y---->", y);
+let city_list_1 = get_city_by_state_name("Delhi")
+console.log("city_list_1:", city_list_1)
+let city_list_2 = get_city_by_state_name("Karnātaka")
+console.log("city_list_2:", city_list_2)
