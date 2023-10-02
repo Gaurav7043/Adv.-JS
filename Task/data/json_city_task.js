@@ -1,20 +1,20 @@
-let data = require("./23_data.json")
+let data = require("./data.json")
 // console.log("data:", data)
 
-function get_city_by_state_name(state){
-    let filter = data.filter((e)=>{
-        // console.log("--->", e.state_name);
-        return e?.state_name === state
-    });
-    // console.log("filter:", filter)
-    let cityarr = filter.map((e)=>{
-        // console.log(e);
-        return e.city;
+// print city name based on population
+function get_city_by_population(popu){
+    let data_pop = data.filter((e)=>{
+        // console.log("--->", e);
+        return e.population > popu
     })
-    // console.log("cityarr:", cityarr)
-    return cityarr;
+    // console.log("data_pop:", data_pop)
+    let city_arr = data_pop.map((e)=>{
+        // console.log("e", e);
+        return e.city
+    })
+    // console.log("city_arr:", city_arr)
+    return city_arr
 }
-let city_list_1 = get_city_by_state_name("Delhi")
-console.log("city_list_1:", city_list_1)
-let city_list_2 = get_city_by_state_name("Karnātaka")
-console.log("city_list_2:", city_list_2)
+
+let city_list = get_city_by_population(10494000)
+console.log("city_list:", city_list)
