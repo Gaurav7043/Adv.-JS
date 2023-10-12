@@ -177,17 +177,11 @@ let array1 = [1,2,3,6,7,9,3,56,8]
 
 // =============task-4==============
 // 1. ['i','am', 'urvish'] ==> want ['hsivru','ma','i'] by use of loop
-const arr2 = ['i', 'am', 'urvish'];
-let str1 = '';
-
-for (let i = arr2.length - 1; i >= 0; i--) {
-  let reversedWord = '';
-  for (let j = arr2[i].length - 1; j >= 0; j--) {
-    reversedWord += arr2[i][j];
-  }
-  str1 += reversedWord;
-  if (i !== 0) {
-    str1 += ' ';
-  }
+let name = ["i", "am", "urvish"];
+let newArr = [];
+for (let i = 0; i < name.length; i++) {
+  let x = name[i].split("").reverse().join("");
+  newArr.unshift(x);
+  // console.log("x:", x);
 }
-console.log(str1);
+console.log("newArr:", newArr);
