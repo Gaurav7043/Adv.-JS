@@ -1,7 +1,7 @@
 let data = require("./data.json")
 
 // 1. import data from json
-// console.log("data:", data);
+console.log("data:", data);
 
 // 2. give all city name of state which one give by user
 console.log("2. give all city name of state which one give by user");
@@ -53,7 +53,19 @@ let city_list = get_city_name_by_population(12395000)
 console.log("city_list:", city_list)
 
 // 5. acending decending population wise
-
+console.log("5. acending decending population wise");
+function fun1(user) {
+    let ace = data.filter((e) => {
+        return e.state_name === user;
+    });
+    let cit = ace.map((e) => {
+        return e.population;
+    });
+    let sort = cit.sort();
+        return sort;
+}
+let ac = fun1("Delhi");
+console.log("ac", ac);
 
 // 6. top 5 city population wise [only name of city]
 console.log("6. top 5 city population wise [only name of city]");
@@ -76,14 +88,14 @@ function total_population_by_state_name(pop){
     let filter = data.filter((e)=>{
         return e.state_name === pop
     })
+    let total = 0;
     let p = filter.map((e)=>{
-        return e.population
+        total += +e.population
     })
-    return p
+    return total
 }
-
-let d = total_population_by_state_name("Delhi")
-console.log("d:", d);
+let total = total_population_by_state_name("Delhi")
+console.log("total:", total);
 
 // 8. give top 5 state name population wise
 console.log("8. give top 5 state name population wise");
